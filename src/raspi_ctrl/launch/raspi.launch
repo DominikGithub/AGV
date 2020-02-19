@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 	<param name="/use_sim_time" value="false"/>
-	<include file="$(find ydlidar)/launch/x4_lidar.launch" />
+	<!--include file="$(find ydlidar)/launch/x4_lidar.launch" /-->
+	<include file="$(find raspi_ctrl)/launch/x4_lidar.launch" />
 	<include file="$(find raspi_ctrl)/launch/mapping_default.launch" />
 	<!--include file="$(find hector_costmap)/launch/costmap.launch" /-->
 	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
