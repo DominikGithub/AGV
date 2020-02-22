@@ -1,0 +1,7 @@
+#! /usr/bin/env python
+
+import motor_ctrl.motor_ctrl
+
+if __name__ == '__main__':
+    motor_ctrl.motor_ctrl.listen_cmd()
+

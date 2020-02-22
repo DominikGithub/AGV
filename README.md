@@ -14,13 +14,14 @@ Lidar guided autonomous robot.
 
 * Ubuntu 18.04 LTS
 * ROS Melodic  
+* `$ sudo ./ros_install.sh`  
 
 [TF tree](doc/frames.pdf)  
 
 ## Start  
 
 ```
-* $ catkin_make  
-* $ source /devel/setup.bash  
-* $ roslaunch raspi_ctrl raspi.launch  
+ $ catkin_make  
+ $ source /devel/setup.bash  
+ $ roslaunch raspi_ctrl raspi.launch  
 ```
