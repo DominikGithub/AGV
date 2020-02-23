@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
 <launch>
-	<node pkg="rviz" type="rviz" name="rviz" args="-d ~/.code/rviz/rviz.rviz"/>
-	<!--node pkg="teleop_twist_keyboard" name="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/-->
+	<node pkg="rviz" type="rviz" name="rviz" args="-d ~/code/RRRAGV/rviz/rviz.rviz"/>
 </launch>

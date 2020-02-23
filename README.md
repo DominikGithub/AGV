@@ -18,6 +18,8 @@ Lidar guided autonomous robot.
 
 [TF tree](doc/frames.pdf)  
 
+[rqt_graph](dic/rqt_graph.svg)  
+
 ## Start  
 
 ```
