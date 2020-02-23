@@ -4,6 +4,9 @@
 	<!--include file="$(find ydlidar)/launch/x4_lidar.launch" /-->
 	<include file="$(find raspi_ctrl)/launch/x4_lidar.launch" />
 	<include file="$(find raspi_ctrl)/launch/mapping_default.launch" />
+
+	<node pkg="motor_pkg" name="motor" type="motor.py" output="screen" /> 
+
 	<!--include file="$(find hector_costmap)/launch/costmap.launch" /-->
 	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
 		<!-- Global Planner -->
@@ -26,3 +29,4 @@
 		<param name="baud" type="int" value="57600"/>
 	</node-->
 </launch>
+
