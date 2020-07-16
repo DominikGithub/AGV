@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find raspi_ctrl)/rviz/rviz.rviz"/>
+	<node pkg="teleop_twist_keyboard" name="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/>
+
+</launch>
