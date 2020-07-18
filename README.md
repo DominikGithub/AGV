@@ -51,3 +51,46 @@ N4 | 12 (PWM0)
 
 <img alt="rqt_graph" src="doc/rqt_graph.svg" width="100%">
 
+# Project structure  
+```
+├── README.md
+├── build (gen)
+├── devel (gen)
+├── doc
+│   ├── frames.pdf
+│   ├── raspberry_pi_3_PWM_pins.png
+│   ├── rqt_graph.svg
+│   └── wiring_hbrige_raspi.jpg
+├── ros_install.sh
+└── src
+    ├── CMakeLists.txt -> /opt/ros/melodic/share/catkin/cmake/toplevel.cmake
+    ├── motor_pkg
+    │   ├── CMakeLists.txt
+    │   ├── bin
+    │   │   └── motor_ctrl
+    │   ├── package.xml
+    │   ├── setup.py
+    │   └── src
+    │       └── motor_ctrl
+    │           ├── __init__.py
+    │           ├── motor.py
+    │           └── name_ascii.txt
+    ├── raspi_ctrl
+    │   ├── CMakeLists.txt
+    │   ├── launch
+    │   │   ├── costmap_configs
+    │   │   │   ├── base_local_planner_params.yaml
+    │   │   │   ├── costmap_common_params.yaml
+    │   │   │   ├── global_costmap_params.yaml
+    │   │   │   └── local_costmap_params.yaml
+    │   │   ├── mapping_default.launch
+    │   │   ├── raspi.launch
+    │   │   ├── rviz.launch
+    │   │   └── x4_lidar.launch
+    │   ├── package.xml
+    │   └── rviz
+    │       ├── rviz.rviz
+    │       └── setup_ros_env.sh
+    ├── teleop_twist_keyboard
+    └── ydlidar_ros
+```
