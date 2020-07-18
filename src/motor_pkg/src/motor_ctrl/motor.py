@@ -23,27 +23,7 @@ def twist2velocity(twist):
         speed_left = twist.linear.x - speed_angular
         speed_right = twist.linear.x + speed_angular
   
-    vel = setSpeedms(speed_left, speed_right)
-
-def setSpeedms(speed_left_ms, speed_right_ms):
-    """
-    Convert speed to time.
-    @param speed_left_ms:
-    @param speed_right_ms:
-    """
-    speed_left = msToSteps(speed_left_ms)
-    speed_right = msToSteps(speed_right_ms)
     setSpeed(speed_left, speed_right)
-
-def msToSteps(speed):
-    """
-    Convert time to steps.
-    @param speed: speed in time [ms]
-    @returns speed: speed in steps
-    """
-    MM_PER_ROTATION = 2 * 3.142 * 10
-    STEPS_PER_REVOLUTION = 1.0
-    return (int)((speed * 1000 * STEPS_PER_REVOLUTION) / MM_PER_ROTATION)
 
 def constrain(value, low, high):
     """
@@ -57,19 +37,17 @@ def constrain(value, low, high):
     if value > high: return high
     return value
 
-def setSpeed(speed_left, speed_right):
+def setSpeed(s_left, s_right):
     """
     Actuate differential drive motors.
-    @param speed_left: speed left motor
-    @param speed_right: speed right motor
+    @param s_left: speed left motor
+    @param s_right: speed right motor
     """
 
-    # limit max speed
-    DEFAULT_TOP_SPEED = 0.1
-    s_left = constrain(speed_left, -DEFAULT_TOP_SPEED, DEFAULT_TOP_SPEED)
-    s_right = constrain(speed_right, -DEFAULT_TOP_SPEED, DEFAULT_TOP_SPEED)
+    rospy.loginfo("TWIST SPEED: %s, %s\r" % (s_left, s_right))
 
-    rospy.loginfo("MOTOR SPEED: %s, %s" % (s_left, s_right))
+    s_left  = s_left * 100
+    s_right = s_right * 100
 
     # motor
     try:
@@ -86,27 +64,26 @@ def setSpeed(speed_left, speed_right):
         if  s_right == 0: pass
         elif s_right > 0: r_pin = right_forw
         else:             r_pin = right_back
-        #rospy.loginfo("%s %s " % (l_pin, r_pin))
-
+        
         # GPIO setup
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BOARD)
         if s_left != 0:GPIO.setup(l_pin, GPIO.OUT)
         if s_right != 0:GPIO.setup(r_pin, GPIO.OUT)
 
-        if s_left != 0: l_pwm = GPIO.PWM(l_pin, 1)
-        if s_right != 0:r_pwm = GPIO.PWM(r_pin, 1)
+        if s_left != 0: l_pwm = GPIO.PWM(l_pin, 10)
+        if s_right != 0:r_pwm = GPIO.PWM(r_pin, 10)
 
         # actuate
-        if s_left != 0: l_pwm.start(100)
-        if s_right != 0:r_pwm.start(100)
-        time.sleep(0.5)
+        if s_left != 0: l_pwm.start(abs(s_left) if abs(s_right) < 100 else 100)
+        if s_right != 0:r_pwm.start(abs(s_right) if abs(s_right) < 100 else 100)
+        time.sleep(1)
 
         # stop
         if s_left != 0: l_pwm.stop()
         if s_right != 0:r_pwm.stop()
     except Exception as ex:
-        rospy.logerr("%s" % ex)
+        rospy.logerr("%s\r" % ex)
     finally:
         # reset pin in/out state
         GPIO.cleanup()
@@ -116,7 +93,7 @@ def callback(twist):
     Ros topic cmd_vel subscription callback.
     @param twist: ROS topic twist
     """
-    log_txt = "%s received -> Linear: %s Angular: %s" % (rospy.get_caller_id(), twist.linear, twist.angular)
+    log_txt = "%s received -> Linear: %s Angular: %s\r" % (rospy.get_caller_id(), twist.linear, twist.angular)
     log_txt = log_txt.replace('\n', ' ')
     rospy.loginfo(log_txt, logger_name="motor_node_logger")
 
