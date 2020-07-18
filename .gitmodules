@@ -2,3 +2,6 @@
 	path = src/ydlidar_ros
 	url = https://github.com/YDLIDAR/ydlidar_ros.git
 	branch = X4
+[submodule "src/teleop_twist_keyboard"]
+	path = src/teleop_twist_keyboard
+	url = https://github.com/ros-teleop/teleop_twist_keyboard.git
