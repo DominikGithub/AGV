@@ -1,4 +1,4 @@
-[submodule "src/ydlidar"]
-	path = src/ydlidar
+[submodule "src/ydlidar_ros"]
+	path = src/ydlidar_ros
 	url = https://github.com/YDLIDAR/ydlidar_ros.git
 	branch = X4
