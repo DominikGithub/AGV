@@ -101,41 +101,6 @@ def callback(twist, args):
     # convert twist to motor velocity
     twist2velocity(twist, ros_write_conn)
 
-
-
-
-def prod_driver(write_conn):
-    counter = 0
-    while True:
-        write_conn.send(['counter', counter])
-        counter = counter + 1
-        time.sleep(0)
-
-def motor_driver(read_conn):
-    """
-    Execute motor command.
-    @param read_conn: python multithreading pipe connection object.
-    """
-    while True:
-        print("\033[1;34m %s \033[0m\r" % read_conn.recv())
-        time.sleep(0)
-
-"""
-def init_motor_process():
-    motor_read_conn, ros_write_conn = Pipe()
-    pm = Process(target=motor_driver, args=(motor_read_conn,))
-    pr = Process(target=prod_driver, args=(ros_write_conn,))
-    
-    ros_write_conn.send([42, None, 'hello'])
-    #motor_read_conn.close()
-    
-    pm.start()
-    pr.start()
-    
-    #pm.join()
-    return pm, pr
-"""
-
 def listen_cmd():
     """
     Motor node main method.
@@ -145,7 +110,7 @@ def listen_cmd():
         ascii_art_str = file.read()
         print("\033[1;34m" + ascii_art_str + "\033[0m")
 
-    #pm, pr = init_motor_process()
+    # start motor driver process
     motor_read_conn, ros_write_conn = Pipe()
     pm = Process(target=setSpeed, args=(motor_read_conn,))
     pm.start()
@@ -157,7 +122,6 @@ def listen_cmd():
 
     # join worker threads
     pm.join()
-    #pr.join()
 
 if __name__ == '__main__':
     listen_cmd()
