@@ -1,4 +1,4 @@
-# ROS RaspberryPi Robot/AGV  
+# ROS AGV  
 
 Lidar guided autonomous robot.  
 
@@ -57,6 +57,8 @@ N4 | 12 (PWM0)
 ├── build (gen)
 ├── devel (gen)
 ├── doc
+│   ├── cad/... 
+│   ├── photos/... 
 │   ├── frames.pdf
 │   ├── raspberry_pi_3_PWM_pins.png
 │   ├── rqt_graph.svg
@@ -94,3 +96,15 @@ N4 | 12 (PWM0)
     ├── teleop_twist_keyboard
     └── ydlidar_ros
 ```
+
+<img alt="robot complete" src="doc/photos/20201101_130622.jpg" width="50%">
+<img alt="robot complete" src="doc/photos/20201101_130505.jpg" width="50%">
+<img alt="robot complete" src="doc/photos/20201101_130325_croped.jpg" width="50%">
+
+## FreeCAD  
+
+Top power & control | Lidar   
+--|-- 
+<img alt="cad hbridge" src="doc/cad/RaspiRobot_raspi_base_hbridge.png" width="75%"> | <img alt="cad lidar" src="doc/cad/RaspiRobot_ydliard_mounting_plate_v2.png" width="75%">  
+Bottom power  |
+<img alt="cad battery" src="doc/cad/RaspiRobot_battery_bottom.png" width="75%"> | 
