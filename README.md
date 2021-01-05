@@ -1,8 +1,9 @@
 # ROS AGV  
 
-Lidar guided autonomous robot.  
+Lidar guided autonomous robot  
 
 ## Start  
+Catkin workspace root folder: `src/`  
 ```
  $ catkin_make  
  $ source /devel/setup.bash  
@@ -18,6 +19,8 @@ see `/rviz/setup_ros_env.sh`
 ```
 $ roslaunch raspi_ctrl rviz.launch
 ```  
+
+Manual keyboard control via [Teleop twist keyboard](http://wiki.ros.org/teleop_twist_keyboard)  
 
 ## Hardware  
 
@@ -56,8 +59,9 @@ N4 | 12 (PWM0)
 ├── README.md
 ├── build (gen)
 ├── devel (gen)
+├── cad
 ├── doc
-│   ├── cad/... 
+│   ├── cad_designs/... 
 │   ├── photos/... 
 │   ├── frames.pdf
 │   ├── raspberry_pi_3_PWM_pins.png
@@ -97,11 +101,12 @@ N4 | 12 (PWM0)
     └── ydlidar_ros
 ```
 
+## Robot assembly  
 <img alt="robot complete" src="doc/photos/20201101_130622.jpg" width="50%">
 <img alt="robot complete" src="doc/photos/20201101_130505.jpg" width="50%">
 <img alt="robot complete" src="doc/photos/20201101_130325_croped.jpg" width="50%">
 
-## FreeCAD  
+## FreeCAD designs  
 
 Top power & control | Lidar   
 --|-- 
