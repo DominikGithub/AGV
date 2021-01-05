@@ -2,6 +2,8 @@
 
 Lidar guided autonomous robot  
 
+[//]: # "[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)"
+
 ## Start  
 ```
  $ catkin_make  
@@ -21,20 +23,21 @@ $ roslaunch raspi_ctrl rviz.launch
 
 Manual keyboard control via [Teleop twist keyboard](http://wiki.ros.org/teleop_twist_keyboard)  
 
-## Hardware  
+### Lidar SLAM  
+<img alt="ydlidar_screen" src="doc/ydlidar_rviz.png" width="75%">
 
+## Setup  
+* [Ubuntu](https://wiki.ubuntu.com/ARM/RaspberryPi) 18.04 LTS for ARM  
+* ROS Melodic  
+* `$ sudo ./ros_install.sh`  
+
+## Hardware  
 * Raspberry Pi 3  
 * L298N dual H-Bridge  
 * Ydlidar X4  
 * Adafruit PowerBoost 1000  
 * LiPo 3.7V  
 * 2x 9V battery  
-
-## Setup  
-
-* [Ubuntu](https://wiki.ubuntu.com/ARM/RaspberryPi) 18.04 LTS for ARM  
-* ROS Melodic  
-* `$ sudo ./ros_install.sh`  
 
 ### Motor wiring  
 H-Bridge | Raspberry Pi GPIO
@@ -55,8 +58,18 @@ N4 | 12 (PWM0)
 
 <img alt="rqt_graph" src="doc/rqt_graph.svg" width="100%">
 
-### Lidar SLAM  
-<img alt="ydlidar_screen" src="doc/ydlidar_rviz.png" width="75%">
+## Robot assembly  
+<img alt="robot complete" src="doc/photos_assembly/20201101_130622.jpg" width="50%">
+<img alt="robot complete" src="doc/photos_assembly/20201101_130505.jpg" width="50%">
+<img alt="robot complete" src="doc/photos_assembly/20201101_130325_croped.jpg" width="50%">
+
+## FreeCAD designs  
+
+Top power & control | Lidar   
+--|-- 
+<img alt="cad hbridge" src="doc/cad_designs/RaspiRobot_raspi_base_hbridge.png" width="75%"> | <img alt="cad lidar" src="doc/cad_designs/RaspiRobot_ydliard_mounting_plate_v2.png" width="75%">  
+Bottom power  |
+<img alt="cad battery" src="doc/cad_designs/RaspiRobot_battery_bottom.png" width="75%"> | 
 
 # Project structure  
 ```
@@ -104,16 +117,3 @@ N4 | 12 (PWM0)
     ├── teleop_twist_keyboard
     └── ydlidar_ros
 ```
-
-## Robot assembly  
-<img alt="robot complete" src="doc/photos_assembly/20201101_130622.jpg" width="50%">
-<img alt="robot complete" src="doc/photos_assembly/20201101_130505.jpg" width="50%">
-<img alt="robot complete" src="doc/photos_assembly/20201101_130325_croped.jpg" width="50%">
-
-## FreeCAD designs  
-
-Top power & control | Lidar   
---|-- 
-<img alt="cad hbridge" src="doc/cad_designs/RaspiRobot_raspi_base_hbridge.png" width="75%"> | <img alt="cad lidar" src="doc/cad_designs/RaspiRobot_ydliard_mounting_plate_v2.png" width="75%">  
-Bottom power  |
-<img alt="cad battery" src="doc/cad_designs/RaspiRobot_battery_bottom.png" width="75%"> | 
