@@ -110,6 +110,6 @@ N4 | 12 (PWM0)
 
 Top power & control | Lidar   
 --|-- 
-<img alt="cad hbridge" src="doc/cad/RaspiRobot_raspi_base_hbridge.png" width="75%"> | <img alt="cad lidar" src="doc/cad/RaspiRobot_ydliard_mounting_plate_v2.png" width="75%">  
+<img alt="cad hbridge" src="doc/cad_designs/RaspiRobot_raspi_base_hbridge.png" width="75%"> | <img alt="cad lidar" src="doc/cad_designs/RaspiRobot_ydliard_mounting_plate_v2.png" width="75%">  
 Bottom power  |
-<img alt="cad battery" src="doc/cad/RaspiRobot_battery_bottom.png" width="75%"> | 
+<img alt="cad battery" src="doc/cad_designs/RaspiRobot_battery_bottom.png" width="75%"> | 
