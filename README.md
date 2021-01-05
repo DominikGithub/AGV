@@ -56,7 +56,7 @@ N4 | 12 (PWM0)
 <img alt="rqt_graph" src="doc/rqt_graph.svg" width="100%">
 
 ### Lidar SLAM  
-<img alt="ydlidar_screen" src="doc/ydlidar_rviz.png" width="50%">
+<img alt="ydlidar_screen" src="doc/ydlidar_rviz.png" width="75%">
 
 # Project structure  
 ```
@@ -69,6 +69,7 @@ N4 | 12 (PWM0)
 │   ├── frames.pdf
 │   ├── raspberry_pi_3_PWM_pins.png
 │   ├── rqt_graph.svg
+│   ├── ydlidar_rviz.png
 │   └── wiring_hbrige_raspi.jpg
 ├── ros_install.sh
 └── src
