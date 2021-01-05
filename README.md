@@ -3,7 +3,6 @@
 Lidar guided autonomous robot  
 
 ## Start  
-Catkin workspace root folder: `src/`  
 ```
  $ catkin_make  
  $ source /devel/setup.bash  
@@ -27,11 +26,13 @@ Manual keyboard control via [Teleop twist keyboard](http://wiki.ros.org/teleop_t
 * Raspberry Pi 3  
 * L298N dual H-Bridge  
 * Ydlidar X4  
-* LiPo 3.7V JST PH 2.0
+* Adafruit PowerBoost 1000  
+* LiPo 3.7V  
+* 2x 9V battery  
 
 ## Setup  
 
-* Ubuntu 18.04 LTS
+* [Ubuntu](https://wiki.ubuntu.com/ARM/RaspberryPi) 18.04 LTS for ARM  
 * ROS Melodic  
 * `$ sudo ./ros_install.sh`  
 
@@ -57,12 +58,11 @@ N4 | 12 (PWM0)
 # Project structure  
 ```
 ├── README.md
-├── build (gen)
-├── devel (gen)
 ├── cad
+│   └── README.md
 ├── doc
-│   ├── cad_designs/... 
-│   ├── photos/... 
+│   ├── cad_designs/
+│   ├── photos_assembly/
 │   ├── frames.pdf
 │   ├── raspberry_pi_3_PWM_pins.png
 │   ├── rqt_graph.svg
@@ -102,9 +102,9 @@ N4 | 12 (PWM0)
 ```
 
 ## Robot assembly  
-<img alt="robot complete" src="doc/photos/20201101_130622.jpg" width="50%">
-<img alt="robot complete" src="doc/photos/20201101_130505.jpg" width="50%">
-<img alt="robot complete" src="doc/photos/20201101_130325_croped.jpg" width="50%">
+<img alt="robot complete" src="doc/photos_assembly/20201101_130622.jpg" width="50%">
+<img alt="robot complete" src="doc/photos_assembly/20201101_130505.jpg" width="50%">
+<img alt="robot complete" src="doc/photos_assembly/20201101_130325_croped.jpg" width="50%">
 
 ## FreeCAD designs  
 
