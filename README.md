@@ -55,6 +55,9 @@ N4 | 12 (PWM0)
 
 <img alt="rqt_graph" src="doc/rqt_graph.svg" width="100%">
 
+### Lidar SLAM  
+<img alt="ydlidar_screen" src="doc/ydlidar_rviz.png" width="50%">
+
 # Project structure  
 ```
 ├── README.md
