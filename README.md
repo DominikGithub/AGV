@@ -1,6 +1,6 @@
-# ROS AGV  
+# AGV  
 
-Lidar guided autonomous robot  
+Lidar guided autonomous, mobile robot based on ROS.  
 
 [//]: # "[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)"
 
@@ -26,8 +26,12 @@ Manual keyboard control via [Teleop twist keyboard](http://wiki.ros.org/teleop_t
 ### Lidar SLAM  
 <img alt="ydlidar_screen" src="doc/ydlidar_rviz.png" width="75%">
 
+### ROS TF  
+![TF tree](doc/frames.pdf)  
+<img alt="rqt_graph" src="doc/rqt_graph.png" width="100%">
+
 ## Setup  
-* [Ubuntu](https://wiki.ubuntu.com/ARM/RaspberryPi) 18.04 LTS for ARM  
+* [Ubuntu](https://wiki.ubuntu.com/ARM/RaspberryPi) 18.04 for ARM  
 * ROS Melodic  
 * `$ sudo ./ros_install.sh`  
 
@@ -40,23 +44,21 @@ Manual keyboard control via [Teleop twist keyboard](http://wiki.ros.org/teleop_t
 * 2x 9V battery  
 
 ### Motor wiring  
-H-Bridge | Raspberry Pi GPIO
---- | ---: 
-N1 | 13 (PWM1)
-N2 | 19 (PWM1)
-N3 | 18 (PWM0)
-N4 | 12 (PWM0)
+H-Bridge | Raspi GPIO | Motors  
+--- | :--- | :---
+IN1 | 13 (PWM1) |  
+IN2 | 19 (PWM1) |  
+IN3 | 18 (PWM0) |  
+IN4 | 12 (PWM0) |  
+OUT1 | | M1 forward  
+OUT2 | | M1 backward  
+OUT3 | | M2 forward  
+OUT4 | | M2 backward  
 
 <img alt="Raspi 3 PWM pins" src="doc/raspberry_pi_3_PWM_pins.png" width="50%">
 <img alt="H-bridge wiring" src="doc/wiring_hbrige_raspi.jpg"  width="50%">
 
 [//]: <> (https://funduino.de/nr-34-motoren-mit-h-bruecke-l298n-ansteuern)
-
-## ROS TF  
-
-![TF tree](doc/frames.pdf)  
-
-<img alt="rqt_graph" src="doc/rqt_graph.svg" width="100%">
 
 ## Robot assembly  
 <img alt="robot complete" src="doc/photos_assembly/20201101_130622.jpg" width="50%">
